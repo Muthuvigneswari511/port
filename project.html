@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+             background: url('second.avif');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 15px;
+            margin: 0 10px;
+        }
+        nav a:hover {
+            background-color: #555;
+        }
+        .project-container{
+            border: 1px solid black;
+            border-left: 50px;
+            background: url('https://freerangestock.com/sample/139684/sky-blue-flare-bubbles-abstract-background-.jpg');
+        }
+        .project-box{
+            background: url('second.avif');
+            border: 1px solid black;
+        }
+        button:hover{
+            color:black;
+            background-color: rgb(194, 209, 217);
+        }
+        button{
+            background-color: rgba(246, 188, 198,0.3);
+        }
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+                margin: 10px;
+            }
+
+            button {
+                width: 100%;
+                margin-bottom: 10px;
+                text-align: center;
+            }
+
+            .btn-container {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+       
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="project.html">Projects</a>
+        <a href="cc.html">Contact</a>
+    </nav>
+    <section class="project" id="project">
+        <h2 class="heading" style="color: rgb(226, 13, 159)">My <span style="color: rgb(240, 11, 145);">project</span> </h2>
+        <div class="project-container" style="text-align: center;">            
+            <div class="project-box">
+            <h1>HTML</h1>
+            <button class="btn-container"><a href="task1.html">form</a></button>
+        </div>
+        <div  class="project-box">
+            <h1>CSS</h1>
+            <button class="btn-container"><a href="log.html">form</a></button>
+            
+        </div>
+        <div  class="project-box" id="cl">
+            <h1>Javascript</h1>
+            <button class="btn-container"><a href="food1.html">form</a></button>
+        </div>
+
+        </div>
+    </section>
+
+</body>
+</html>
+

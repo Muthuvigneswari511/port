@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('second.avif');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #6eabf0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        a button:hover{
+            color: white;
+            background-color: blue;
+            font-size: 15px;
+            font-weight: 200px;
+        }
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 15px;
+            margin: 0 10px;
+        }
+        nav a:hover {
+            background-color: #555;
+        }
+        div{
+            padding: 10px 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        div h1{
+            font-size: 40px;
+            color: tomato;
+        }
+        div h1:hover{
+            background-color: pink;
+            color : black;
+        }
+        div p{
+            font-size: 25px;
+            text-align: justify;
+        }
+        div img{
+            float: right;
+            margin-right: 5%;
+            margin-left: 5%;
+
+        }
+        @keyframes fadeIn{
+            0% {opacity: 0;}
+            100% {opacity: 1;}
+        }
+        #img{
+            border-radius: 10px;
+            width: 500px;
+            box-sizing: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="project.html">Projects</a>
+        <a href="cc.html">Contact</a>
+    </nav>
+    <div>
+        <img id="img" src="im.jpg" alt="image">
+        <h1>About me</h1>
+        <p>I am an MCA student and an aspiring web developer who is intrested to create
+            innovative web pages that attract clients attention. My area of specialization in front end
+            are HTML, CSS and javascript. And I am also completed my <b>typewriting (junior)</b>. I also do have knowledge about back end databases like
+            SQL and MongoDB.
+        </p>
+        <a href="muthu resume.pdf" ><button style="align-content: center;"> <b>Download cv</b></button></a>
+    </div>
+
+</body>
+</html>

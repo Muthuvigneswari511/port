@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Styled Food Order Form</title>
+<style>
+        /* General styling */
+        body {
+            font-family: Arial, sans-serif;
+            background: url('login.jpg');
+            margin: 20px;
+            padding: 20px;
+            max-width: 600px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        fieldset {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        legend {
+            padding: 0 10px;
+            font-weight: bold;
+            color: #2d87f0;
+        }
+
+        input[type="checkbox"], input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: none;
+        }
+
+        /* Button styling */
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #2d87f0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        button:hover {
+            background-color: #256bb3;
+        }
+
+        .btn-container {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+                margin: 10px;
+            }
+
+            button {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .btn-container {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+</style>
+</head>
+<body>
+
+<h2>Food Order Form</h2>
+
+<!-- Form with multiple and single choice options -->
+<form id="foodForm">
+<!-- Major Dishes (Multiple Choice) -->
+<fieldset>
+<legend>Major Dishes</legend>
+<input type="checkbox" id="pizza" name="dishes" value="Pizza" data-price="10"> Pizza ($10)<br>
+<input type="checkbox" id="burger" name="dishes" value="Burger" data-price="8"> Burger ($8)<br>
+<input type="checkbox" id="pasta" name="dishes" value="Pasta" data-price="12"> Pasta ($12)<br>
+<input type="checkbox" id="salad" name="dishes" value="Salad" data-price="7"> Salad ($7)<br>
+</fieldset>
+
+<!-- Starters (Multiple Choice) -->
+<fieldset>
+<legend>Starters</legend>
+<input type="checkbox" id="garlicBread" name="starters" value="Garlic Bread" data-price="5"> Garlic Bread ($5)<br>
+<input type="checkbox" id="fries" name="starters" value="Fries" data-price="4"> Fries ($4)<br>
+<input type="checkbox" id="soup" name="starters" value="Soup" data-price="6"> Soup ($6)<br>
+<input type="checkbox" id="springRolls" name="starters" value="Spring Rolls" data-price="7"> Spring Rolls ($7)<br>
+</fieldset>
+
+<!-- Soft Drinks (Single Choice) -->
+<fieldset>
+<legend>Soft Drinks</legend>
+<input type="radio" id="coke" name="drinks" value="Coke" data-price="3"> Coke ($3)<br>
+<input type="radio" id="sprite" name="drinks" value="Sprite" data-price="3"> Sprite ($3)<br>
+<input type="radio" id="fanta" name="drinks" value="Fanta" data-price="3"> Fanta ($3)<br>
+<input type="radio" id="water" name="drinks" value="Water" data-price="1"> Water ($1)<br>
+</fieldset>
+
+<!-- Text Area to Display Selections -->
+<textarea id="orderDetails" rows="10" cols="50" readonly></textarea>
+
+<!-- Buttons -->
+<div class="btn-container">
+<button type="button" onclick="calculateTotal()">Total Cost</button>
+<button type="button" onclick="clearForm()">Clear</button>
+</div>
+</form>
+
+<script>
+        // Function to calculate total cost and display selected items
+        function calculateTotal() {
+            let orderDetails = "";
+            let totalCost = 0;
+
+            // Get selected dishes (multiple choice)
+            document.querySelectorAll('input[name="dishes"]:checked').forEach(function (item) {
+                let price = parseInt(item.getAttribute('data-price'));
+                orderDetails += item.value + " - $" + price + "\n";
+                totalCost += price;
+            });
+
+            // Get selected starters (multiple choice)
+            document.querySelectorAll('input[name="starters"]:checked').forEach(function (item) {
+                let price = parseInt(item.getAttribute('data-price'));
+                orderDetails += item.value + " - $" + price + "\n";
+                totalCost += price;
+            });
+
+            // Get selected drink (single choice)
+            let selectedDrink = document.querySelector('input[name="drinks"]:checked');
+            if (selectedDrink) {
+                let price = parseInt(selectedDrink.getAttribute('data-price'));
+                orderDetails += selectedDrink.value + " - $" + price + "\n";
+                totalCost += price;
+            }
+
+            // Show total cost in the textarea
+            orderDetails += "\nTotal Cost: $" + totalCost;
+            document.getElementById("orderDetails").value = orderDetails;
+        }
+
+        // Function to clear the form and textarea
+        function clearForm() {
+            document.getElementById("foodForm").reset();
+            document.getElementById("orderDetails").value = "";
+        }
+</script>
+
+</body>
+</html>

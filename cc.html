@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Home Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('second.avif');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            
+        }
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 15px;
+            margin: 0 10px;
+        }
+        nav a:hover {
+            background-color: #555;
+        }
+        form{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            flex-wrap: wrap;
+            margin-left: 30%;
+            margin-right: 30%;
+            margin-top: 30px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        input[type="text"], textarea{
+            margin-bottom: 20px;
+        }
+        div{
+            padding: 10px 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn{
+            0% {opacity: 0;}
+            100% {opacity: 1;}
+        }
+        div i{
+            width: 20px;
+            height : 40px;
+        }
+        .s{
+            background-color: #c1bbbb;
+            color: aliceblue;
+        }
+        p:hover{
+            color: blue
+        }
+        i:hover{
+            color: teal
+        }
+        h3:hover{
+            color:antiquewhite
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="project.html">Projects</a>
+        <a href="cc.html">Contact</a>
+    </nav>
+    <form id="form"><img src="im.jpg" style="border-radius: 10px;" width="400px">
+        <h1>Any Queries?</h1>
+        <label for="name"><b>Name:</b></label>
+        <input type="text" id="name" name="name" >
+        <label for="ph/mail"><b>Contact:</b></label>
+        <input type="number" id="contact" name="ph/mail" ><br>
+        <label for="query"><b>Your Query:</b></label>
+        <textarea name="query" id="query"></textarea>
+        <button type="submit">Submit</button>
+    </form>
+    <div class="s">
+        <hr>
+    <h1>Contact me:</h1>
+    <p>muthua8930@gmail.com</p>
+    <p>6382839494</p>
+    <p>Madurai</p>
+    <a href="https://github.com/"><i class="fa-brands fa-github"></i></a>
+    <a href="https://web.whatsapp.com/"><i class="fa-brands fa-whatsapp"></i></a>
+    <a href="https://www.instagram.com/accounts/onetap/?next=%2F&hl=en"><i class="fa-brands fa-instagram"></i></a>
+    <br>
+    <h3>Thank you for visit my page!!!</h3>
+    </div>
+    <script>
+        document.querySelector('form').addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevent form submission
+        validate();
+    });
+
+    function validate() {
+        let name = document.getElementById('name').value.trim();
+        let contact = document.getElementById('contact').value.trim();
+        let message = document.getElementById('query').value.trim();
+        
+        // Regular expressions for validation
+        let phonePattern = /^\d{10}$/; // Simple 10-digit phone number
+        let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Simple email pattern
+
+        if (!name) {
+            alert('Name is required.');
+            return;
+        }
+
+        if (!contact) {
+            alert('Contact is required.');
+            return;
+        }
+
+        if (!phonePattern.test(contact) && !emailPattern.test(contact)) {
+            alert('Contact must be a valid phone number or email.');
+            return;
+        }
+        if (!message) {
+            alert('Your query is required.');
+            return;
+        }
+
+        // If validation passes, you can submit the form or perform the desired action
+        alert('Form submitted successfully!');
+        // Uncomment the line below if you want to actually submit the form
+        // this.submit();
+    }
+    </script>
+
+</body>
+</html>
+
+
+
+

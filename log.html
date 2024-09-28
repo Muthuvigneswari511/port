@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Login page</title>
+   <style>
+    body{
+        font-family: Arial,sans-serif;
+        background: url('food.jpg');
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+    }
+    .container{
+        background: url('\https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReXpS9qUESlhYi4_iQpr8AfVUjFRqfHzDVcQ&s');
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        max-width:500px;
+        margin:50px auto;
+        padding:20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2{
+        text-align: center;
+    }
+    .form-group{
+        margin-bottom:15px;
+    }
+    label{
+        display: block;
+        margin-bottom: 5px;
+    }
+    .l{
+        width: 100%;
+        padding: 10px;
+        margin:5px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    button{
+        width:100%;
+        padding:10px;
+        background-color: #28a745;
+        color:white;
+        border:none;
+        border-radius:4px;
+        cursor:pointer;
+        font-size: 16px;
+    }
+    button:hover{
+        background-color: #218838;
+    }
+    #but{
+        background-color: antiquewhite;
+        color:black;
+    }
+    #but:hover{
+        background-color: bisque;
+    }
+    @media 
+        (max-width: 600px) {
+            body {
+                padding: 10px;
+                margin: 10px;
+            }
+
+            button {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+             .btn-container {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+
+   </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-group">
+            <h2>Login</h2>
+            <label>Username:</label>
+            <input type="text" class="l" placeholder="Name" required>
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input class="l" id="ps" type="password" placeholder="password" required>
+        </div>
+        <div>
+            <input type="checkbox" onclick="psd()" placeholder="password"><label>Show password</label>
+        </div>
+        <div class="btn-container">
+            <button type="button">Login</button><hr>
+            <a href="firstform.html"><button id="but" type="button">Sign in</button></a>
+        </div>
+    </div>
+
+    </div>
+</fieldset>
+<script>
+    function psd(){
+        let tem_psd=document.getElementById("ps");
+        if(tem_psd.type=="password"){
+            tem_psd.type="text";
+        }
+        else{
+            tem_psd.type="password";
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+             background: url('first.avif');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 15px;
+            margin: 0 10px;
+        }
+        nav a:hover {
+            background-color: #555;
+        }
+        .content
+         {
+            padding: 20px;
+            justify-content: center;
+            justify-items: center;
+            text-align: center;
+            margin-top: 7%;
+            animation: fadeIn 2s ease-in-out;
+                  
+        }
+        .content img{
+            border-radius: 10px;
+            border-color: pink;
+            border-width: 20px;
+            box-sizing: 10px;
+        }
+        @keyframes fadeIn{
+            0% {opacity: 0;}
+            100% {opacity: 1;}
+        }
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+                margin: 10px;
+            }
+
+            button {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .btn-container {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="project.html">Projects</a>
+        <a href="cc.html">Contact</a>
+    </nav>
+
+    <div class="content">
+        <img src="next.jfif" float="right" width="200px" alt="image">
+        <h1>Hi! I'm Muthuvigneswari</h1>
+        <p>This is my official portfolio. Navigate using the links above learn about us and our projects.</p>
+
+    </div>
+
+</body>
+</html>
+
+
+
+
+
+
